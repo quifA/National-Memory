@@ -1,0 +1,201 @@
+/* ألوان أساسية */
+:root {
+  --bg: #013220;       /* أخضر غامق */
+  --card: #024c2f;     /* أخضر أفتح */
+  --accent: #059e5f;
+  --correct:#28a745;
+  --wrong:#c82333;
+  --text:#fff;
+}
+
+/* خلفية */
+body {
+  margin: 0;
+  font-family: "Tahoma", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* صندوق رئيسي */
+.container {
+  width: min(500px, 80%);
+  background: var(--card);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+  text-align: center;
+}
+
+/* العنوان */
+h1, h2 {margin: 0 0 15px;}
+h1 {font-size: 2rem;}
+.subtitle {opacity: 0.9; margin-bottom:20px;}
+
+/* الأزرار */
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: .2s;
+}
+button:hover { transform: scale(1.03); }
+
+/* خيارات */
+#options {display: grid; gap: 10px; margin: 15px 0;}
+.option {
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+  cursor: pointer;
+  transition: .2s;
+  border:1px solid rgba(255,255,255,.1);
+}
+.option:hover {background: rgba(255,255,255,.1);}
+.option.correct {background: var(--correct);}
+.option.wrong {background: var(--wrong);}
+
+/* شريط علوي */
+.top-bar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.9rem;
+  margin-bottom:20px;
+  opacity:.9;
+}
+
+/* إخفاء وإظهار الشاشات */
+.screen {display: none;}
+.screen.active {display:block;}
+
+
+/* 🔹 الشعار في أعلى الصفحة */
+.logo-fixed {
+  position: absolute;
+  top: -5px;          /* المسافة من أعلى الصفحة */
+  left: 50%;          /* منتصف العرض */
+  transform: translateX(-50%); /* يحطه بالوسط تمام */
+  width: 300px;       /* حجم مناسب */
+  height: auto;
+  z-index: 100;       /* يكون فوق البطاقة */
+}
+
+/* البطاقة تبقى في النص وما تتأثر بالشعار */
+body {
+  margin:0;
+  font-family: Tahoma, sans-serif;
+  background: #024c2f;
+  color:#fff;
+  text-align:center;
+}
+
+.container {
+  max-width:600px;
+  margin:90px auto 0; /* 120px تترك مساحة تحت الشعار */
+  background: #066a42;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: #023339 url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* 🔹 يخلي الكارد يختفي من الصفحة الأولى فقط */
+#start.container {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.decor-left, .decor-right {
+  position: fixed;
+  top: 0;
+  height: 100vh;       /* تغطي طول الصفحة */
+  width: auto;
+  opacity: 0.2;        /* شفافية خفيفة حتى ما تغطي المحتوى */
+  z-index: 1;          /* وراء النصوص والكارد */
+}
+
+.decor-left {
+  left: 0;
+}
+
+.decor-right {
+  right: 0;
+  transform: scaleX(-1); /* يقلب الصورة للجهة الثانية */
+}
+
+
+.decor-left, .decor-right {
+  position: fixed;      /* تبقى ثابتة مع التمرير */
+  top: 0;
+  bottom: 0;            /* تمتد للطرف السفلي */
+  width: 80px;          /* 👈 عرض الزخرفة (غيري الرقم حسب الحجم اللي تبينه) */
+  height: 100vh;        /* تغطي طول الصفحة بالكامل */
+  object-fit: cover;    /* تحافظ على تناسب الصورة */
+  opacity: 0.4;         /* شفافية خفيفة عشان ما تغطي النصوص */
+  z-index: 1;           /* تكون وراء الكارد والنصوص */
+}
+
+.decor-left {
+  left: 0;
+}
+
+.decor-right {
+  right: 0;
+  transform: scaleX(-1); /* يقلب الصورة أفقياً عشان تكون معكوسة لليمين */
+}
+
+
+/* 🔹 تكبير كلمة الذاكرة الوطنية + ظل */
+#start h1 {
+  font-size: 55px;                /* 👈 حجم كبير جدًا */
+  font-weight: bold;             /* سميكة */
+  color: #fff;                   /* لون أبيض واضح */
+  text-shadow: 0 0 20px #000,    /* ظل أسود خفيف */
+               0 0 20px #014d40; /* لمسة ظل أخضر ناعم */
+  margin: 20px 0;
+}
+
+
+/* لجعل الموقع متجاوب على الشاشات الصغيرة */
+@media (max-width: 600px) {
+  #start h1 {
+    font-size: 42px; /* يصغر شوي على الجوال */
+  }
+
+  .logo-fixed {
+    width: 140px; /* يصغر الشعار شوي */
+  }
+
+  .container {
+    width: 90%;
+    padding: 20px;
+    margin-top: 80px; /* يترك مسافة مناسبة */
+  }
+
+  .decor-left, .decor-right {
+    width: 40px; /* تصغير الزخارف على الجوال */
+    opacity: 0.15; /* تخف شوي عشان ما تغطي */
+  }
+}

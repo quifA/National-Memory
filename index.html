@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الذاكرة الوطنية</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img src="photo.png" class="decor-left" alt="زخرفة">
+  <img src="photo.png" class="decor-right" alt="زخرفة">
+  <!-- 🔹 الشعار في أعلى الصفحة -->
+  <img src="logo.png" alt="شعار الذاكرة الوطنية" class="logo-fixed">
+
+  <!-- 🔹 الصفحة الأولى بدون كارد -->
+  <section id="start" class="screen active container">
+    <h1>الذاكرة الوطنية </h1>
+    <button class="primary" onclick="startQuiz()">اختبر وطنيتك</button>
+  </section>
+
+  <!-- 🔹 صفحة الأسئلة -->
+  <section id="quiz" class="screen container">
+    <div class="top-bar">
+      <div id="questionCounter"></div>
+      <div id="scoreBoard">النتيجة الحالية: <span id="liveScore">0</span></div>
+    </div>
+    <h2 id="questionText"></h2>
+    <div id="options"></div>
+    <button id="nextBtn" class="primary" onclick="nextQuestion()" style="display:none;">التالي</button>
+  </section>
+
+  <!-- 🔹 صفحة النتيجة -->
+  <section id="result" class="screen container">
+    <h2>نتيجتك</h2>
+    <p id="scoreText" class="score"></p>
+    <p id="scoreMessage" class="subtitle"></p>
+    <button class="ghost" onclick="location.reload()">إعادة المحاولة</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
